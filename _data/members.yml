@@ -26,9 +26,9 @@
         url: mailto:name@domain.com
       - title: twitter
         url: http://twitter.com/handle
-  - name: Martin Blunt
-    position: Marketing
-    text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+  - name: 송진석(Song, Jinseok)
+    position: Designer
+    text: 밥을 좋아하는
     img: team04.jpg
     social:
       - title: envelope #use for email address
