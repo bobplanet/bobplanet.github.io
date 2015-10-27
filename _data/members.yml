@@ -11,7 +11,7 @@
   - name: 이진승
     position: Pizza Eater
     text: Pizza를 사랑하는 Pizza eater
-    img: 1000741_LEE.pngg
+    img: 1000741_LEE.png
     social:
       - title: envelope #use for email address
         url: mailto:name@domain.com
