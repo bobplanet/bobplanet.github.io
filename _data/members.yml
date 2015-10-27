@@ -27,8 +27,8 @@
       - title: twitter
         url: http://twitter.com/handle
   - name: James Jang
-    position: Marketing
-    text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    position: Nothing
+    text: 大家好
     img: team04.jpg
     social:
       - title: envelope #use for email address
