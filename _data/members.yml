@@ -35,3 +35,12 @@
         url: mailto:name@domain.com
       - title: twitter
         url: http://twitter.com/handle
+  - name: 전성호(全成浩)
+    position: Marketer 
+    text: 기운을 느끼는 타로마스터.
+    img: jeon_400x400.jpg
+    social:
+      - title: envelope #use for email address
+        url: mailto:bigapple01@gmail.com
+      - title: twitter
+        url: http://twitter.com/readymadeboy
