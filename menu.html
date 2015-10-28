@@ -1,0 +1,68 @@
+---
+title: ApiTest
+---
+<html>
+<head>
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="{{ 'assets/css/materialize.min.css' | prepend: site.baseurl }}" media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="{{ 'assets/js/materialize.min.js' | prepend: site.baseurl }}"></script>
+    <script type="text/javascript" src="{{ 'assets/js/handlebars-v4.0.2.js' | prepend: site.baseurl }}"></script>
+    <script type="text/javascript" src="{{ 'assets/js/cloudendpoint.js' | prepend: site.baseurl }}"></script>
+</head>
+<body>
+    <!-- API에서 불러온 메뉴 HTML이 담길 위치 -->
+    <div id="content-placeholder" style="width:400px;"></div>
+
+    <!-- 서버에서 오늘의 메뉴를 불러옴 -->
+    <script type="text/javascript">
+        function init() {
+            ginit(function() {
+                console.log('init finished');
+                menuOfDate('2015-10-26');
+            });
+        }
+
+        function menuOfDate(date) {
+            var req = { date: date };
+            gapi.client.bobplanetApi.menuOfDate(req).execute(function(resp) {
+                console.log(resp);
+                var template = Handlebars.compile($('#menu-template').html());
+                var html = template(resp);
+                $('#content-placeholder').html(html);
+            });
+        }
+    </script>
+
+    <!-- 서버에서 불러온 메뉴를 화면에 표시할 템플릿 -->
+    <script id="menu-template" type="text/x-handlebars-template">
+        {% raw %}
+        {{#each menu}}
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="{{item.image}}" />
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">{{when}}{{type}} - {{item.name}}<i class="material-icons right">more_vert</i></span>
+                <p>{{#each submenu}}{{item.name}} {{/each}}</p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+        </div>
+        {{/each}}
+        {% endraw %}
+    </script>
+
+    <!-- Google AppEngine API 초기화 -->
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+</body>
+</html>
