@@ -1,7 +1,7 @@
 ﻿# 프로젝트 멤버 목록. 페이지에서는 이름 순서대로 sorting됨
 - name: 진헌규(Jin, Heonkyu)
   position: 프로젝트 리더
-  text: 주중에는 전략보고서 쓰고 주말에는 코딩하는 기획자.
+  text: 주중에는 전략보고서 쓰고 주말에는 코딩하는 기획자. 이번 프로젝트를 계기로 안드로이드 프로그래머로 데뷔함.
   img: heonkyu.jin.png
   social:
     - title: envelope #use for email address

@@ -1,8 +1,0 @@
----
-layout: blog
-title:  "밥플래닛 프로젝트를 소개합니다"
-date:   2015-10-25 16:54:46
-author: 밥플래닛 팀
-categories:
-- blog
----
