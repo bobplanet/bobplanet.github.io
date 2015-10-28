@@ -2,12 +2,12 @@
   - name: 진헌규(Jin, Heonkyu)
     position: 프로젝트 리더
     text: 주중에는 전략보고서 쓰고 주말에는 코딩하는 기획자.
-    img: team01.jpg
+    img: heonkyu.jin.png
     social:
       - title: envelope #use for email address
         url: mailto:heonkyu.jin@gmail.com
-      - title: twitter
-        url: http://twitter.com/handle
+      - title: linkedin
+        url: http://kr.linkedin.com/in/heonkyujin
   - name: 이진승
     position: Pizza eater
     text: Pizza를 사랑하는 Data Scientist
