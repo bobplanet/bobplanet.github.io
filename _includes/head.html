@@ -1,0 +1,36 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+ 
+  <!-- facebook opengraph 코드 나중에 추가예정 -->
+	<!-- 
+	<meta property="og:type"          	content="article" />
+	<meta property="og:url"           	content="http://vikicast.com/" />
+	<meta property="og:title"         	content="VIKICAST" />
+	<meta property="og:description"   	content="당신만 못본 동영상 여기 다 있다." />
+	<meta property="og:image" 			content="http://vikicast.com/res/facebook/Untitled07.png" />
+
+ -->
+	<!-- Favicons-->
+	<link rel="shortcut icon" href="assets/images/favicon/apple-touch-icon-152x152.png" type="image/png" />
+	<link rel="apple-touch-icon-precomposed" href="assets/images/favicon/apple-touch-icon-152x152.png"  type="image/png" />
+	<link rel="icon" href="assets/images/favicon/favicon-32.png" sizes="32x32">
+
+
+
+  <link rel="stylesheet" href="assets/css/style.css">
+<!--
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
+	<!-- adsense -->
+	<!-- <script async src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'></script> -->
+
+
+</head>
