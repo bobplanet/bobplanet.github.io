@@ -34,7 +34,7 @@ function fnTodate () {
 // onload 시에 init을 실행함
 function init() {
     ginit(function() {
-        console.log('init finished');
+        console.log('init finished', fnTodate() );
         menuOfDate( fnTodate() );
     });
 }

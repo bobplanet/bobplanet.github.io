@@ -17,19 +17,16 @@
 	menuOfDate = function (date) {
 	    var req = { date: date };
 	    gapi.client.bobplanetApi.menuOfDate(req).execute(function(resp) {
-	        console.log(resp);
+        console.log(resp);
 
-          if(window.location.pathname == "/Index.html"){
+          if(window.location.pathname == "/index.html"){
             
-            console.log("a test")
-
             var template = Handlebars.compile($('#menu-template').html());
             var html = template(resp);
             $('#content-placeholder').html(html);
 
 
           } else {
-            console.log("b test")
             createDom(resp);
           }
 
