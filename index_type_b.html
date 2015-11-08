@@ -4,98 +4,29 @@ layout: default
 
 <div id="index-banner" class="parallax-container">
   <div id="mainBanner" class="section no-pad-bot ">
-    <div class="container">
-      <div class="row center">
-        <img src="assets/images/origin.png" width="128" alt="">
-        <h2 class="hide-on-med-and-down header center deep-orange-text text-lighten-2">플라랩 멤버들이 만든 이상한 앱! </h2>
-      </div>
-      <div class="row center">
-        <h5 class="header col s12 brown-text" >
-          BOBplanet이 매일 The Planet 식당메뉴를 알려드립니다. <br />매일 점심/저녁 메뉴를 미리 푸쉬받아보세요.
-        </h5>
-        <a href="https://play.google.com/store/apps/details?id=kr.bobplanet" target="_blank" class="waves-effect waves-light btn-large deep-orange lighten-3"><i class="material-icons right">file_download</i>App 다운로드 </a>
-        <br />
-      </div>
+    <div id="content-placeholder" class="container deep-orange-text text-lighten-2">
+      <!-- jquery로 수정 -->
+      <h5 class="center-align"></h5>
+      <ul class="collection"> </ul>
     </div>
   </div>
-  <div class="parallax"><img src="assets/images/bg_about1.jpg" alt="Unsplashed background img 1"></div>
+<div class="parallax"><img src="assets/images/bg_about1.jpg" alt="Unsplashed background img 1"></div>
 </div>
 
 <div class="github-commit">
   <div class="container">
-    <div class="commit ">
-    Latest Commit on Github:
+    <div class="commit truncate">
+    Latest Commit :
     &nbsp;&nbsp;
     <a href="" class="sha"></a>
     &nbsp;&nbsp;
       <span class="message"></span>
     <span class="date"></span>
-    <a id="github-button" href="https://github.com/bobplanet/Bobplanet" class="hide-on-med-and-down btn-flat right grey-text text-lighten-5 waves-effect waves-light hide-on-small-only">Github</a>
+    <a id="github-button" href="https://github.com/bobplanet/Bobplanet" class="hide-on-med-and-down btn-flat right grey-text text-lighten-5 waves-effect waves-light secondary-content"><i class="fa fa-github right "></i>Github</a>
     </div>
   </div>
 </div>
 
-
-<div class="container">
-
-  <div id="content-placeholder" class="section row">
-    <!-- 서버에서 불러온 메뉴를 화면에 표시할 템플릿 -->
-
-    <script id="menu-template" type="text/x-handlebars-template">
-    {% raw %}
-
-    <div class="col s12 m4 l4">
-      <div id="addMoreCircle" class="section center-align"  alt="{{previousDate}}" >
-        <a class="btn-floating btn-large waves-effect waves-light deep-orange lighten-2"><i class="material-icons">keyboard_arrow_up</i></a>
-      </div>
-          <hr class="section-heading-spacer">
-          <div class="clearfix"></div>
-          <h4 class="section-heading deep-orange-text text-lighten-2"><i class="material-icons">today</i>오늘의 식단 <br />{{date}}</h4>
-      <div id="addMoreCircle" class="section center-align" alt="{{nextDate}}">
-        <a class="btn-floating btn-large waves-effect waves-light deep-orange lighten-2"><i class="material-icons">keyboard_arrow_down</i></a>
-      </div>
-    </div>
-    <div class="col s12 m8 l8">
-    {{#each menu}}
-      <div class="col s12 m6 l6 grid-item {{date}}" id="{{id}}">
-        <div class="card small">
-            <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="{{item.image}}" />
-                <span class='card-title'>{{item.name}}</span>
-            </div>
-            <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4 truncate"><img src="{{item.thumbnail}}" class="circle smallcircle"> {{when}}{{type}} - {{item.name}}<i class="material-icons right activator">more_vert</i></span>
-                <p>{{#each submenu}}{{item.name}}, {{/each}}</p>
-            </div>
-            <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4 ">Card Title<i class="material-icons right">close</i></span>
-                <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-        </div>
-      </div>
-    {{/each}}
-    </div>
-
-    {% endraw %}
-
-    </script>
-  </div> <!-- end content-placeholder --> 
-</div> <!-- end container -->
-
-<div class="parallax-container valign-wrapper">
-  <div class="section no-pad-bot">
-    <div class="container">
-      <div class="row center">
-        <h4 class="header light">
-          많은 경우 SK플래닛 직원들은  <br /><span class='yellow-text'><strong>푸시 알림</strong></span> 을 보여주기 전까지는 오늘 점심이 뭔지도 모른다.
-        </h4>
-          <a href="https://play.google.com/store/apps/details?id=kr.bobplanet" target="_blank" class="waves-effect waves-light btn-large deep-orange lighten-3"><i class="material-icons right">file_download</i>밥플래닛 다운로드</a>
-
-      </div>
-    </div>
-  </div>
-  <div class="parallax"><img src="assets/images/bg_about2.jpg" alt="Unsplashed background img 2"></div>
-</div>
 
 <div class="container">
   <div class="section">
@@ -132,6 +63,22 @@ layout: default
     </div>
 </div><!-- end section -->
 </div><!-- end container -->
+
+
+<div class="parallax-container valign-wrapper">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <div class="row center">
+        <h4 class="header light">
+          많은 경우 SK플래닛 직원들은  <br /><span class='yellow-text'><strong>푸시 알림</strong></span> 을 보여주기 전까지는 오늘 점심이 뭔지도 모른다.
+        </h4>
+          <a href="https://play.google.com/store/apps/details?id=kr.bobplanet" target="_blank" class="waves-effect waves-light btn-large deep-orange lighten-3"><i class="material-icons right">file_download</i>밥플래닛 다운로드</a>
+
+      </div>
+    </div>
+  </div>
+  <div class="parallax"><img src="assets/images/bg_about2.jpg" alt="Unsplashed background img 2"></div>
+</div>
 
 <!-- Page Content -->
 

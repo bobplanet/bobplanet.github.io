@@ -18,6 +18,10 @@ function ginit(pageInitCallback) {
     gapi.client.load('oauth2', 'v2', callback);
 }
 
+
+<!-- 서버에서 오늘의 메뉴를 불러옴 -->
+
+// 날짜를 불러옴
 function fnTodate () {
    var now = new Date();
    var year= now.getFullYear();
@@ -25,27 +29,12 @@ function fnTodate () {
    var day = now.getDate()>9 ? ''+now.getDate() : '0'+now.getDate();
 
    return year + '-' + mon + '-' + day;
-
 }
 
-
-<!-- 서버에서 오늘의 메뉴를 불러옴 -->
-
+// onload 시에 init을 실행함
 function init() {
     ginit(function() {
         console.log('init finished');
-        menuOfDate( fnTodate() );
-    });
-}
-
-
-
-function menuOfDate(date) {
-    var req = { date: date };
-    gapi.client.bobplanetApi.menuOfDate(req).execute(function(resp) {
-        console.log(resp);
-        var template = Handlebars.compile($('#menu-template').html());
-        var html = template(resp);
-        $('#content-placeholder').html(html);
+        menuOfDate('2015-11-05');
     });
 }

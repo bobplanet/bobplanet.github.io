@@ -1,14 +1,11 @@
 # Site settings
-title: jekyll-materializecss
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+title: Bob Planet - 우리가 만드는 식단앱
+email: skp.1000728@skplanet.com
+description: > BOB planet이 매일 The Planet 식당메뉴를 알려드립니다. <br />매일 점심/저녁 메뉴를 미리 푸쉬받아보세요.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "http://bobplanet.kr" # the base hostname & protocol for your site
+twitter_username: dusskapark
+github_username:  dusskapark
 
 # Build settings
 markdown: kramdown
