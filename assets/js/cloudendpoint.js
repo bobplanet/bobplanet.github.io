@@ -35,6 +35,6 @@ function fnTodate () {
 function init() {
     ginit(function() {
         console.log('init finished');
-        menuOfDate('2015-11-05');
+        menuOfDate( fnTodate() );
     });
 }
