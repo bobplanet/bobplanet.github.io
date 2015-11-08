@@ -63,7 +63,7 @@
   };
 
       // Github Latest Commit
-  if ($('.github-commit').length) { // Checks if widget div exists (Index only)
+  // if ($('.github-commit').length) { // Checks if widget div exists (Index only)
     $.ajax({
       url: "https://api.github.com/repos/bobplanet/Bobplanet/commits/master",
       dataType: "json",
@@ -79,7 +79,7 @@
         $('.github-commit').find('.message').html(message);
       }
     });
-  };
+  // };
 
 // GA코드 추가하기 
 
