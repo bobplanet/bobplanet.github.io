@@ -82,7 +82,18 @@
         $('.github-commit').find('.message').html(message);
       }
     });
-  }
+  };
+
+// GA코드 추가하기 
+
+$('.btn-large').click(function(){
+  var banner_click = $(this).parents('div[id]').attr('id');
+  var btn_Action = $(this).text()
+  console.log(btn_Action);
+  ga('send', 'event', 'BannerBtnClick', btn_Action, banner_click);
+});
+
+
 
 
   }); // end of document ready
