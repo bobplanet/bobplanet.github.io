@@ -19,8 +19,8 @@
 	    gapi.client.bobplanetApi.menuOfDate(req).execute(function(resp) {
         console.log(resp);
 
-          if(window.location.pathname == "/index.html"){
-            
+          if(window.location.pathname !== "/index_type_b.html"){
+            console.log('a test')
             var template = Handlebars.compile($('#menu-template').html());
             var html = template(resp);
             $('#content-placeholder').html(html);
@@ -34,6 +34,7 @@
 	}
 
 	function createDom (json) {
+    console.log('b test')
     $("#content-placeholder > h5").text(json.date);
 
 		$.each(json.menu, function(i, v) {
