@@ -63,13 +63,13 @@ layout: default
                 <img class="activator" src="{{item.image}}" /><span class="badge teal white-text">{{when}}{{type}}</span>
                 <span class='card-title'>{{item.name}}</span>
             </div>
-            <div class="card-content row">
+            <div class="card-content row valign-wrapper">
                 <div class="col s8">
                   <span class="card-title activator grey-text text-darken-4 truncate">{{item.name}} </span>
                   <p class="truncate activator">{{#each submenu}}{{item.name}}, {{/each}}</p>
                 </div>
-                <div class="col s2"><i class="material-icons teal-text">thumb_up</i></div>
-                <div class="col s2"><i class="material-icons deep-orange-text">thumb_down</i></div>
+                <div class="col s2 valign"><i class="material-icons teal-text">thumb_up</i>&nbsp;&nbsp;{{item.numThumbUps}}</div>
+                <div class="col s2 valign"><i class="material-icons deep-orange-text">thumb_down</i>&nbsp;&nbsp;{{item.numThumbDowns}}</div>
 
             </div>
             <div class="card-reveal">
