@@ -1,7 +1,0 @@
----
-layout: blog
-title:  "블로그 Main"
-author: 밥플래닛 팀
-categories:
-- blog
----
