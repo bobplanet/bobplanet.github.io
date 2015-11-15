@@ -3,28 +3,110 @@ layout: default
 body_class: post-template
 ---
 {% if page.image %}
-<div id="feature_image">
-  <div class="inner" style="background-image: url('{{ site.baseurl }}/content/images//{{ page.image }}')">
-    <img src='{{ site.baseurl }}/content/images/{{ page.image }}'>
-    </div>
+<!--일단 삭제 -->
+<!--
+<div id="blog-banner">
+	<div class="parallax-container">
+	  <div class="section no-pad-bot">
+	    <div class="container">
+	      <div id="featured_image" class="row">
+		      <h5 class="white-text"><a class="white-text" href="{{ site.baseurl }}/" id="home_link"><i class="material-icons">home</i> </a>
+			      <time datetime="{{ page.date | date:'%Y-%m-%d' }}"><a href="{{ page.url }}"> {{ page.date | date: "%B %d, %Y" }}</a></time>
+			        <span class="count" id="js-reading-time">&nbsp;</span>
+		        </h5>
+	        <h4 class="header light">{{ page.title }}</h4>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="parallax"><img src="/content/images/{{ page.image }}" alt="Unsplashed background"></div>
+	</div>
 </div>
+-->
 {% endif %}
 
-	<div class="container">
-		<article role="main" class="{% if page.image %}image{% endif %}">
-		    <header>
-		      <a href="{{ site.baseurl }}/" id="home_link">«</a>
-		      <div class="meta"><time datetime="{{ page.date | date:'%Y-%m-%d' }}"><a href="{{ page.url }}">{{ page.date | date: "%B %d, %Y" }}</a></time>
-		        <span class="count" id="js-reading-time">&nbsp;</span>
-		      </div>
-		      <h1>{{ page.title }}</h1>
-		    </header>
+<div class="container">
+	<article role="main" class="{% if page.image %}image{% endif %}">
+		<header>	
+			<p class="valign-wrapper"><a href="{{ site.baseurl }}/" id="home_link"><i class="material-icons">home</i> </a>
+				<time datetime="{{ page.date | date:'%Y-%m-%d' }}"><a href="{{ page.url }}"> {{ page.date | date: "%B %d, %Y" }}</a></time>
+				<span class="count" id="js-reading-time">&nbsp;</span>
+			</p>
 
-		    <div class="text" id="js-post-content">
-		        {{ content }}
-		    </div>
-		</article>
-	</div>
+		    <h1 class="header light">{{ page.title }}</h1>
+		</header>
+
+	    <div class="text" id="js-post-content">
+	        {{ content }}
+	    </div>
+
+    </article>
+    <div id="disqus_thread"></div>
 
 
+	<ul id="related" class="collection with-header posts">
+		<li class="collection-header"><h4>Related Posts</h4></li>
+	    {% for post in site.related_posts limit:3 %}
+		<li class="collection-item">
+			<span>{{ post.date | date_to_string }} &raquo;</span> <a href="{{ post.url }}">{{ post.title }}</a>
+		</li>
+	    {% endfor %}
+	</ul>
+
+	<script>
+	/**
+	* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+	* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+	*/
+
+	var disqus_config = function () {
+	this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+	this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+	};
+
+	(function() { // DON'T EDIT BELOW THIS LINE
+	var d = document, s = d.createElement('script');
+
+	s.src = '//bobplanet.disqus.com/embed.js';
+
+	s.setAttribute('data-timestamp', +new Date());
+	(d.head || d.body).appendChild(s);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+</div> <!-- container 종료 -->
+
+<!-- 나중에 저자 정보 표시 예정 -->
+<!--
+<footer role="contentinfo" class='post-footer'>
+    <div class="inner">
+        <div class="vcard">
+          <a href="{{ site.baseurl }}/feed.xml" id="btn_feed" class="btn" title="Feed" target="_blank">
+                <span aria-hidden="true" data-icon=")"></span>
+                <strong>Feed</strong>
+            </a>
+
+            {% if site.logo %}
+            <a href="{{ site.baseurl }}" class="photo circle">
+              <span style="background-image: url('{{ site.baseurl }}/assets/images/{{ site.logo }}');">
+                <img src="{{ site.baseurl }}/assets/images/{{ site.logo }}" alt="{{ site.title }}"/>
+              </span>
+            </a>
+            {% endif %}
+
+            <div class="details">
+                <h4><a href="{{ site.url }}" class="url n">{{ site.title }}</a></h4>
+                <a href="{{ site.baseurl | prepend: site.url }}" class="js-remove-domain-schema">{{ site.url }}{{ site.baseurl }}</a><br>
+                <span>Published with <a href="https://jekyllrb.org">Jekyll</a></span>
+            </div>
+        </div>
+        <div id="user_bio">
+            <div class="inner">
+                {{ site.description }}
+            </div>
+        </div>
+    </div>
+</footer>
+-->
 

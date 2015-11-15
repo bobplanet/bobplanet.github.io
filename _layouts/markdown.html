@@ -5,8 +5,18 @@
 <body>
   {% include header.html %}
 
-  {{ content | markdownify }}
+<div class="container ">
+	<article role="main">
+		<header>	
+		    <h1 class="header light">{{ page.title }}</h1>
+		</header>
 
+	    <div class="text" id="js-post-content">
+			  {{ content | markdownify }}
+  	    </div>
+
+    </article>
+</div>
   {% include footer.html %}
   {% include jsLinks.html %}
 </body>
