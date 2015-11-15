@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<html>
+{% include head.html %}
+<body>
+  {% include header.html %}
+
+  {{ content | markdownify }}
+
+  {% include footer.html %}
+  {% include jsLinks.html %}
+</body>
+</html>
