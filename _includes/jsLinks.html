@@ -1,34 +1,41 @@
-<div>
-	<!-- jQuery is required by Materialize to function -->
-	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.1/isotope.pkgd.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.3/jquery.timeago.js"></script>
+<!-- jQuery is required by Materialize to function -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.1/isotope.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.3/jquery.timeago.js"></script>
 
-    <script type="text/javascript" src=" /assets/js/cloudendpoint.js"></script>
-    <script type="text/javascript" src=" /assets/js/handlebars-v4.0.4.js"></script>
-    <script type="text/javascript" src=" /assets/js/materialize.min.js"></script>
-	
-	 
-	 <!-- custom JS code -->
-    <script type="text/javascript" src=" /assets/js/init.js"></script>
+<script type="text/javascript" src="/assets/js/cloudendpoint.js"></script>
+<script type="text/javascript" src="/assets/js/handlebars-v4.0.4.js"></script>
+<script type="text/javascript" src="/assets/js/materialize.min.js"></script>
 
-    <!-- Google AppEngine API 초기화 -->
-    
-    <script src="https://apis.google.com/js/client.js?onload=init"></script>
-    <script type="text/javascript">
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<!-- App에서 넘어온 트래픽 추적을 위해 parameter와 cookie를 사용 -->
+<script type="text/javascript" src="{{ "/assets/js/url.min.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/js.cookie.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript">
+if (url('?{{ site.analytics_param }}')) {
+  Cookies.set('{{ site.analyrics_param }}', url('?{{ site.analytics_param }}'));
+}
+var bobp_userId = Cookies.get('{{ site.analytics_param }}');
+</script>
 
-        ga('create', 'UA-68096153-3', 'auto');
-        ga('send', 'pageview');
+<!-- custom JS code -->
+<script type="text/javascript" src=" /assets/js/init.js"></script>
 
-        // App으로 페이지 뷰 보내기.
-        ga('create', 'UA-68096153-1', {'name':'app'});
-        ga('app.send', 'pageview');
+<!-- Google AppEngine API 초기화 -->
+<script src="https://apis.google.com/js/client.js?onload=init"></script>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    </script>
+  ga('create', '{{ site.analytics_trackid_web }}', 'auto');
+  if (bobp_userId) ga('set', '&uid', bobp_userId);
 
-</div>
+  ga('send', 'pageview');
+
+  // App으로 페이지 뷰 보내기.
+  ga('create', '{{ site.analytics_trackid_rollup }}', {'name':'app'});
+  ga('app.send', 'pageview');
+
+</script>

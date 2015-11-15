@@ -1,6 +1,6 @@
 # Site settings
 title: Bob Planet - 우리가 만드는 식단앱
-email: skp.1000728@skplanet.com
+email: bobplanet.team@gmail.com
 description: BOB planet이 매일 The Planet 식당메뉴를 알려드립니다. <br />매일 점심/저녁 메뉴를 미리 푸쉬받아보세요.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
@@ -9,3 +9,8 @@ github_username:  dusskapark
 
 # Build settings
 markdown: kramdown
+
+# Analytics settings
+analytics_param: bobp_userId
+analytics_trackid_web: UA-68096153-3
+analytics_trackid_rollup: UA-68096153-1
