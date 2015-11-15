@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: post
 title:  "밥플래닛 팀을 소개합니다"
 author: 밥플래닛 팀
 categories:
