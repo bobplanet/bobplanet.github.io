@@ -14,54 +14,87 @@
 	});
 
 
-	menuOfDate = function (date) {
+	menuOfDate = function ( date, successFn ) {
 	    var req = { date: date };
 	    gapi.client.bobplanetApi.menuOfDate(req).execute(function(resp) {
         console.log(resp);
 
-          if(window.location.pathname !== "/index_type_b.html"){
-            console.log('a test')
-            var template = Handlebars.compile($('#menu-template').html());
-            var html = template(resp);
-            $('#content-placeholder').html(html);
-
-
-          } else {
-            createDom(resp);
-          }
+        return successFn(resp);
 
 	    });
-	}
+	};
 
-	function createDom (json) {
-    console.log('b test')
-    $("#content-placeholder > h5").text(json.date);
+  response_json = function (resp) {
 
-		$.each(json.menu, function(i, v) {
+    if(window.location.pathname !== "/index_type_b.html"){
+      console.log('a test')
+      var template = Handlebars.compile($('#menu-template').html());
+      var html = template(resp);
+      $('#content-placeholder').html(html);
 
-      console.log(v)
 
-			var description = " ";
+    } else {
 
-        	$.each(v.submenu, function(i, v){
-        		description += v.item.name + ", ";
-        	});
-	
+      console.log('b test')
+      $("#content-placeholder > h5").text(json.date);
 
-        // 카드를 구성한다
-        card =+ "" +
-            "<li class=\"collection-item avatar\">" +
-              "<img src=\"" + v.item.thumbnail + "\" class=\"circle\">" +
-              "<span class=\"title\">" + v.item.name + "</span>" +
-              "<span class=\"badge\">("+ v.item.numThumbDowns +")</span>" +
-              "<p class=\"brown-text\">" + description + "<br />" +
-               " (" + v.calories + ") Kcal</p>" +
-              "<a href=\"#!\" class=\"secondary-content deep-orange-text\"></a>" +
-            "</li>";
-    $("#content-placeholder > ul").append(card);
+      $.each(json.menu, function(i, v) {
+
+        console.log(v)
+
+        var description = " ";
+
+            $.each(v.submenu, function(i, v){
+              description += v.item.name + ", ";
+            });
+    
+
+          // 카드를 구성한다
+          card =+ "" +
+              "<li class=\"collection-item avatar\">" +
+                "<img src=\"" + v.item.thumbnail + "\" class=\"circle\">" +
+                "<span class=\"title\">" + v.item.name + "</span>" +
+                "<span class=\"badge\">("+ v.item.numThumbDowns +")</span>" +
+                "<p class=\"brown-text\">" + description + "<br />" +
+                 " (" + v.calories + ") Kcal</p>" +
+                "<a href=\"#!\" class=\"secondary-content deep-orange-text\"></a>" +
+              "</li>";
+      $("#content-placeholder > ul").append(card);
+
+      });
+
+    };
+
+  }; // response_json 종료
+
+// 어제 메뉴 내일 메뉴 확인하기
+$("body").on("click", ".date", function( e ){
+  menuOfDate($(this).attr("data-id"), response_prev_next );
+});
+
+
+  function response_prev_next (resp) {
+
+    $(".previousDate").attr('data-id', resp.previousDate);
+    $(".today").text(resp.date);
+    $(".nextDate").attr('data-id', resp.nextDate);
+
+    $.each(resp.menu, function(i, v) {
+
+      var description = " ";      
+      $.each(v.submenu, function(i, v){
+        description += v.item.name + ", ";      
+      });
+
+      $(".grid-item").eq(i).attr('id', v.id)
+      .find('img').attr('src', v.item.image).parents('.small')
+      .find('.menu_name').text(v.item.name).parents('.small')
+      .find('p').text(description);
 
     });
+
   };
+
 
       // Github Latest Commit
   // if ($('.github-commit').length) { // Checks if widget div exists (Index only)
@@ -81,6 +114,7 @@
       }
     });
   // };
+
 
 // GA코드 추가하기 
 

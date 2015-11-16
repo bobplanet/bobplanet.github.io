@@ -8,7 +8,7 @@
 
 nav ul a,
 nav .brand-logo {
-	color: #444;
+	color: #fff;
 }
 
 .icon {
@@ -334,6 +334,9 @@ article .text ul li, article .text ol li, article .text dl li {
 }
 article .text ul ul {
     list-style-type: square
+}
+article .text li {
+    list-style-type: circle;
 }
 article .text ol {
     list-style-type: decimal

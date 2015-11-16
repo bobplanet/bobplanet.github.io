@@ -45,27 +45,26 @@ layout: default
     {% raw %}
 
     <div class="col s12 m4 l4">
-      <div class="previousDate section center-align"  alt="{{previousDate}}" >
-        <a class="btn-floating btn-large waves-effect waves-light deep-orange lighten-2"><i class="material-icons">keyboard_arrow_up</i></a>
+      <div class="section center-align">
+        <a data-id='{{previousDate}}' class="date previousDate btn-floating btn-large waves-effect waves-light deep-orange lighten-2"><i class="material-icons">keyboard_arrow_up</i></a>
       </div>
           <hr class="section-heading-spacer">
           <div class="clearfix"></div>
-          <h4 class="section-heading deep-orange-text text-lighten-2"><i class="material-icons">today</i>오늘의 식단 <br />{{date}}</h4>
-      <div class="nextDate section center-align" alt="{{nextDate}}">
-        <a class="btn-floating btn-large waves-effect waves-light deep-orange lighten-2"><i class="material-icons">keyboard_arrow_down</i></a>
+          <h4 class="section-heading deep-orange-text text-lighten-2"><i class="material-icons">today</i>오늘의 식단 <br /><span class="today">{{date}}</span></h4>
+      <div class="section center-align">
+        <a data-id='{{nextDate}}' class="date nextDate btn-floating btn-large waves-effect waves-light deep-orange lighten-2"><i class="material-icons">keyboard_arrow_down</i></a>
       </div>
     </div>
-    <div class="col s12 m8 l8">
+    <div class="col s12 m8 l8" data-id="{{date}}">
     {{#each menu}}
-      <div class="col s12 m6 l6 grid-item {{date}}" id="{{id}}">
+      <div class="col s12 m6 l6 grid-item" id="{{id}}">
         <div class="card small">
             <div class="card-image waves-effect waves-block waves-light">
                 <img class="activator" src="{{item.image}}" /><span class="badge teal white-text">{{when}}{{type}}</span>
-                <span class='card-title'>{{item.name}}</span>
             </div>
             <div class="card-content row valign-wrapper">
                 <div class="col s8">
-                  <span class="card-title activator grey-text text-darken-4 truncate">{{item.name}} </span>
+                  <span class="card-title activator grey-text text-darken-4 truncate"><strong class="activator menu_name">{{item.name}}</strong> </span>
                   <p class="truncate activator">{{#each submenu}}{{item.name}}, {{/each}}</p>
                 </div>
                 <div class="col s2 valign"><i class="material-icons teal-text">thumb_up</i>&nbsp;&nbsp;{{item.numThumbUps}}</div>
@@ -73,7 +72,7 @@ layout: default
 
             </div>
             <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4 ">{{item.name}}<i class="material-icons right">close</i></span>
+                <span class="card-title grey-text text-darken-4 "><strong class="menu_name">{{item.name}}</strong><i class="material-icons right">close</i></span>
                 <p>{{#each submenu}}{{item.name}}, {{/each}}</p>
             </div>
         </div>
