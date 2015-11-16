@@ -2,30 +2,42 @@
 layout: default
 body_class: post-template
 ---
+<style type="text/css">
+.parallax-container {
+  min-height: 100px;
+  max-height: 250px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+</style>
+
 {% if page.image %}
-<!--일단 삭제 -->
-<!--
+<!--대표 이미지가 있는 경우에는 이미지 헤더를 설정 -->
+
 <div id="blog-banner">
 	<div class="parallax-container">
 	  <div class="section no-pad-bot">
 	    <div class="container">
 	      <div id="featured_image" class="row">
-		      <h5 class="white-text"><a class="white-text" href="{{ site.baseurl }}/" id="home_link"><i class="material-icons">home</i> </a>
-			      <time datetime="{{ page.date | date:'%Y-%m-%d' }}"><a href="{{ page.url }}"> {{ page.date | date: "%B %d, %Y" }}</a></time>
+	      <header>
+			  <h6 ><a class="deep-orange-text" href="{{ site.baseurl }}/" id="home_link"><i class="material-icons">home</i> </a>
+			      <time datetime="{{ page.date | date:'%Y-%m-%d' }}"><a class="deep-orange-text" href="{{ page.url }}"> {{ page.date | date: "%B %d, %Y" }}</a></time>
 			        <span class="count" id="js-reading-time">&nbsp;</span>
-		        </h5>
-	        <h4 class="header light">{{ page.title }}</h4>
+		        </h6>
+	        <h4 class="deep-orange-text">{{ page.title }}</h4>
+	        </header>
 	      </div>
 	    </div>
 	  </div>
 	  <div class="parallax"><img src="/content/images/{{ page.image }}" alt="Unsplashed background"></div>
 	</div>
 </div>
--->
-{% endif %}
-
+{% else %}
+<!-- 이미지가 없는 경우에는 그냥 헤더를 설정 -->
 <div class="container">
-	<article role="main" class="{% if page.image %}image{% endif %}">
+
+	<article role="header" class="{% if page.image %}image{% endif %}">
 		<header>	
 			<p class="valign-wrapper"><a href="{{ site.baseurl }}/" id="home_link"><i class="material-icons">home</i> </a>
 				<time datetime="{{ page.date | date:'%Y-%m-%d' }}"><a href="{{ page.url }}"> {{ page.date | date: "%B %d, %Y" }}</a></time>
@@ -35,6 +47,12 @@ body_class: post-template
 		    <h1 class="header light">{{ page.title }}</h1>
 		</header>
 
+    </article>
+</div>
+{% endif %}
+
+<div class="container">
+	<article role="main" class="{% if page.image %}image{% endif %}">
 	    <div class="text" id="js-post-content">
 	        {{ content }}
 	    </div>
@@ -76,37 +94,4 @@ body_class: post-template
 
 
 </div> <!-- container 종료 -->
-
-<!-- 나중에 저자 정보 표시 예정 -->
-<!--
-<footer role="contentinfo" class='post-footer'>
-    <div class="inner">
-        <div class="vcard">
-          <a href="{{ site.baseurl }}/feed.xml" id="btn_feed" class="btn" title="Feed" target="_blank">
-                <span aria-hidden="true" data-icon=")"></span>
-                <strong>Feed</strong>
-            </a>
-
-            {% if site.logo %}
-            <a href="{{ site.baseurl }}" class="photo circle">
-              <span style="background-image: url('{{ site.baseurl }}/assets/images/{{ site.logo }}');">
-                <img src="{{ site.baseurl }}/assets/images/{{ site.logo }}" alt="{{ site.title }}"/>
-              </span>
-            </a>
-            {% endif %}
-
-            <div class="details">
-                <h4><a href="{{ site.url }}" class="url n">{{ site.title }}</a></h4>
-                <a href="{{ site.baseurl | prepend: site.url }}" class="js-remove-domain-schema">{{ site.url }}{{ site.baseurl }}</a><br>
-                <span>Published with <a href="https://jekyllrb.org">Jekyll</a></span>
-            </div>
-        </div>
-        <div id="user_bio">
-            <div class="inner">
-                {{ site.description }}
-            </div>
-        </div>
-    </div>
-</footer>
--->
 
