@@ -40,8 +40,6 @@
 
       $.each(json.menu, function(i, v) {
 
-        console.log(v)
-
         var description = " ";
 
             $.each(v.submenu, function(i, v){
@@ -87,7 +85,7 @@ $("body").on("click", ".date", function( e ){
       });
 
       $(".grid-item").eq(i).attr('id', v.id)
-      .find('img').attr('src', v.item.image).parents('.small')
+      .find('img').attr('src', v.item.thumbnail).parents('.small')
       .find('.menu_name').text(v.item.name).parents('.small')
       .find('p').text(description);
 
