@@ -59,6 +59,10 @@ footer.page-footer {
   margin: 0;
 }
 
+.download_badge {
+    max-width: 180px !important;
+}
+
 .github-commit {
   padding: 14px 0;
   height: 64px;
@@ -136,7 +140,7 @@ footer.page-footer {
 
 
 article {
-    padding: 0 30px;
+    /*padding: 0 30px;*/
     /*max-width: 680px;*/
     text-align: left
 }
@@ -266,16 +270,20 @@ article .text h1, article .text h2, article .text h3, article .text h4, article 
     text-align: left
 }
 article .text h1 {
-    font-size: 30px
+    color: #263238;
+    font-size: 30px;
 }
 article .text h2 {
-    font-size: 28px
+    color: #455a64;
+    font-size: 28px;
 }
 article .text h3 {
-    font-size: 26px
+    color: #607d8b;
+    font-size: 26px;
 }
 article .text h4 {
-    font-size: 24px
+    color: #90a4ae;
+    font-size: 24px;
 }
 article .text h5 {
     font-size: 22px
@@ -333,10 +341,16 @@ article .text ul li, article .text ol li, article .text dl li {
     line-height: 1.5em
 }
 article .text ul ul {
+    list-style-type: square;
+}
+article .text ul li {
+    list-style-type: disc
+}
+article .text ul ul li {
     list-style-type: square
 }
-article .text li {
-    list-style-type: circle;
+article .text ul ul ul li {
+    list-style-type: circle
 }
 article .text ol {
     list-style-type: decimal
