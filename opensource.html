@@ -1,33 +1,39 @@
 ---
-title: 오픈소스라이선스
+title: 오픈소스 라이선스
 layout: markdown
 ---
 
-# 개요
-- 여러 오픈소스 프로젝트가 없었으면 밥플래닛도 만들 수 없었을 것입니다.
-- 밥플래닛 프로젝트가 이용하는 오픈소스 라이브러리들은 아래와 같습니다.
+- 밥플래닛은 여러 오픈소스소프트웨어 라이브러리를 이용해 만들어집니다.
+- 밥플래닛의 전체 소스코드는 [GitHub](https://github.com/bobplanet/Bobplanet)에 공개됩니다.
 
 # 앱
 
 ## 로직 구현
-- [EventBus](https://github.com/greenrobot/EventBus)
-- [Volley](http://developer.android.com/intl/ko/training/volley/index.html)
-- [Hugo](https://github.com/JakeWharton/hugo)
-- [RetroLambda](https://github.com/orfjackal/retrolambda)
-- [Gradle RetroLambda plugin](https://github.com/evant/gradle-retrolambda)
-- [Joda-Time](http://www.joda.org/joda-time/)
+- [EventBus](https://github.com/greenrobot/EventBus) - 앱 안에서의 비동기식 이벤트 처리
+- [Volley](http://developer.android.com/intl/ko/training/volley/index.html) - 이미지 다운로드
+- [Hugo](https://github.com/JakeWharton/hugo) - method 호출로그 자동출력
+- [RetroLambda](https://github.com/orfjackal/retrolambda) - Java8 스타일의 lambda expression
+ - [Gradle RetroLambda plugin](https://github.com/evant/gradle-retrolambda)
 
 ## 사용자 인터페이스
-- [ButterKnife](http://jakewharton.github.io/butterknife/)
-- [MaterialList](https://github.com/dexafree/MaterialList)
-- [CWAC-Pager](https://github.com/commonsguy/cwac-pager)
-- [SmoothProgressbar](https://github.com/castorflex/SmoothProgressBar)
-- [AndroidTagGroup](https://github.com/2dxgujun/AndroidTagGroup)
+- [ButterKnife](http://jakewharton.github.io/butterknife/) - findViewById() 지옥에서 탈출
+- [CWAC-Pager](https://github.com/commonsguy/cwac-pager) - ViewPager에 동적으로 fragment 추가
+- [MaterialList](https://github.com/dexafree/MaterialList) - 카드레이아웃
+- [SmoothProgressbar](https://github.com/castorflex/SmoothProgressBar) - Custom ProgressBar
+- [AndroidTagGroup](https://github.com/2dxgujun/AndroidTagGroup) - 해쉬태그출력
+
+# 서버
+- [Objectify](https://github.com/objectify/objectify/) - DataStore DB 접근 API
+- [BuildConfigPlugin](https://github.com/mfuerstenau/gradle-buildconfig-plugin) - debug/release버전별 설정 차별화
+- [Joda-Time](http://www.joda.org/joda-time/) - 날짜계산시 timezone 포함
 
 # 웹
-- [url()](https://github.com/websanova/js-url)
-- [js-cookie](https://github.com/js-cookie/js-cookie)
-- [materializeCSS](http://materializecss.com/about.html)
-- [handlebars](http://handlebarsjs.com)
-- [isotope](http://isotope.metafizzy.co)
-- [jekyll](https://jekyllrb.com)
+- [jekyll](https://jekyllrb.com) - 블로그를 지원하는 HTML 생성기
+- [materializeCSS](http://materializecss.com/about.html) - 홈페이지에 Material Design 적용
+- [handlebars](http://handlebarsjs.com) - js 기반 HTML 템플릿
+- [isotope](http://isotope.metafizzy.co) - 화면 레이아웃 제어
+- [url()](https://github.com/websanova/js-url) - js에서 GET 패러미터 접근
+- [js-cookie](https://github.com/js-cookie/js-cookie) - js에서 Cookie 접근
+
+# 이미지
+- [freepik.com](http://www.freepik.com/) - DrawerMenu 헤더이미지
