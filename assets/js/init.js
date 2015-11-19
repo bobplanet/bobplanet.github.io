@@ -116,11 +116,14 @@ $("body").on("click", ".date", function( e ){
 
 // GA코드 추가하기 
 
-$('.btn-large').click(function(){
+$('.appDownload').click(function(){
   var banner_click = $(this).parents('div[id]').attr('id');
-  var btn_Action = $(this).text()
-  console.log(btn_Action);
-  ga('send', 'event', 'BannerBtnClick', btn_Action, banner_click);
+  ga('send', 'event', 'BannerBtnClick', 'appDownload', banner_click);
+});
+
+$('.githubJoin').click(function(){
+  var banner_click = $(this).parents('div[id]').attr('id');
+  ga('send', 'event', 'BannerBtnClick', 'githubJoin', banner_click);
 });
 
 
