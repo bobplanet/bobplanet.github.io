@@ -5,12 +5,9 @@
 	<title>밥플래닛-{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-		<meta property="og:url"           	content="http://bobplanet.kr/" />
 		<meta property="og:title"         	content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
 		<meta property="og:type"          	content="website" />
-		<meta property="og:image" 			content="http://bobplanet.kr/assets/images/step4_facebook.png" />
-		<meta property="og:description"   	content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
-	    <meta name="keywords" 				content="식단, 플라랩, P밥, 피크닉, 밥, SK플래닛">
+		<meta property="og:image" 			content="{% if page.image %}{{site.url}}/content/images/{{ page.image }}{% else %}http://bobplanet.kr/assets/images/step4_facebook.png{% endif %}" />
 
 
 	<!-- Favicons-->
