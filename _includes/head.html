@@ -5,8 +5,10 @@
 	<title>밥플래닛-{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
+		<meta property="og:url"				content="{% if page.url %}{{site.url}}{{page.url}}{% else %}{{site.url}}{% endif %}">
 		<meta property="og:title"         	content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
-		<meta property="og:type"          	content="website" />
+		<meta property="og:description" 	content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+		<meta property="og:type"          	content="{% if page.url %}article{% else %}website{% endif %}" />
 		<meta property="og:image" 			content="{% if page.image %}{{site.url}}/content/images/{{ page.image }}{% else %}http://bobplanet.kr/assets/images/step4_facebook.png{% endif %}" />
 
 
@@ -21,7 +23,20 @@
 	<link type="text/css" rel="stylesheet" href=" /assets/css/materialize.min.css"  media="screen,projection"/>
 	<link rel="stylesheet" href=" /assets/css/style.css">
 
- 
+ <script type="text/javascript">
+ // type=webview 로 접속했을 때는 header와 footer를 모두 띄우지 않음 
+
+ if (window.location.search == "type=webview") {
+ 	var nav = document.getElementsByTagName("nav")[0];
+ 	nav.parentNode.removeChild(nav);
+
+ 	var footer = document.getElementsByTagName("footer")[0];
+ 	footer.parentNode.removeChild(footer);
+ };
+
+ </script>
+
+
  <!-- Google Analytics Content Experiment code -->
 <script>function utmx_section(){}function utmx(){}(function(){var
 k='110719536-0',d=document,l=d.location,c=d.cookie;

@@ -26,19 +26,13 @@
 
   response_json = function (resp) {
 
-    if(window.location.pathname !== "/index_type_b.html"){
-      console.log('a test')
-      var template = Handlebars.compile($('#menu-template').html());
-      var html = template(resp);
-      $('#content-placeholder').html(html);
-
-
-    } else {
+    if( url('filename') == "index_type_b" ){
 
       console.log('b test')
-      $("#content-placeholder > h5").text(json.date);
+      $("#content-placeholder > h5").text(resp.date);
+      
 
-      $.each(json.menu, function(i, v) {
+      $.each(resp.menu, function(i, v) {
 
         var description = " ";
 
@@ -52,17 +46,24 @@
               "<li class=\"collection-item avatar\">" +
                 "<img src=\"" + v.item.thumbnail + "\" class=\"circle\">" +
                 "<span class=\"title\">" + v.item.name + "</span>" +
-                "<span class=\"badge\">("+ v.item.numThumbDowns +")</span>" +
-                "<p class=\"brown-text\">" + description + "<br />" +
-                 " (" + v.calories + ") Kcal</p>" +
-                "<a href=\"#!\" class=\"secondary-content deep-orange-text\"></a>" +
+                "<span class=\"badge\">"+ v.calories  +" Kcal</span>" +
+                "<p class=\"brown-text\">" + description + "</p>" +
+                // "<a href=\"#!\" class=\"secondary-content deep-orange-text\"></a>" +
               "</li>";
       $("#content-placeholder > ul").append(card);
 
+
       });
 
-    };
+    } else {
+      console.log('a test')
+      var template = Handlebars.compile($('#menu-template').html());
+      var html = template(resp);
+      $('#content-placeholder').html(html);
 
+    // } else {
+    //   console.log('Thank you!')
+    }; // if else 종료
   }; // response_json 종료
 
 // 어제 메뉴 내일 메뉴 확인하기
@@ -113,13 +114,6 @@ $("body").on("click", ".date", function( e ){
     });
   // };
 
-// type=webview 로 접속했을 때는 header와 footer를 모두 띄우지 않음 
-
-if (url('?type') == 'webview') {
-  console.log('webview');
-  $('nav').remove();
-  $('footer').remove();
-} 
 
 // GA코드 추가하기 
 
