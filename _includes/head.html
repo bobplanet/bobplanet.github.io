@@ -23,18 +23,27 @@
 	<link type="text/css" rel="stylesheet" href=" /assets/css/materialize.min.css"  media="screen,projection"/>
 	<link rel="stylesheet" href=" /assets/css/style.css">
 
- <script type="text/javascript">
- // type=webview 로 접속했을 때는 header와 footer를 모두 띄우지 않음 
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
 
- if (window.location.search == "type=webview") {
- 	var nav = document.getElementsByTagName("nav")[0];
- 	nav.parentNode.removeChild(nav);
+fbq('init', '1658264441122115');
+fbq('track', "PageView");
+fbq('track', 'Lead', {
+	// content_name: 'app download',
+	content_category:  'app download'
+});
 
- 	var footer = document.getElementsByTagName("footer")[0];
- 	footer.parentNode.removeChild(footer);
- };
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1658264441122115&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
 
- </script>
 
 
  <!-- Google Analytics Content Experiment code -->

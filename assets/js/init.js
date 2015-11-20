@@ -115,6 +115,14 @@ $("body").on("click", ".date", function( e ){
   // };
 
 
+// type=webview 로 접속했을 때는 header와 footer를 모두 띄우지 않음    
+   
+if (url('?type') == 'webview') {   
+  console.log('webview');    
+  $('nav').remove();   
+  $('footer').remove();    
+}    
+
 // GA코드 추가하기 
 
 $('.appDownload').click(function(){
