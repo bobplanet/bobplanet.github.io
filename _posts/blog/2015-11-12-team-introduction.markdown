@@ -53,10 +53,10 @@ author: 밥플래닛 팀
 
 **김두식 (https://www.facebook.com/doosik.kim.71)**
 
-- 직업 : 안드로이드 개발자
-- 개발 Product : Tstore, Tcloud, Tcloud안심백업
-- role : 안드로이드 개발자이지만 안드로이드 아니고 웹과 iOS
-- 부탁 : 잘 부탁드립니다.
+* 직업 : 안드로이드 개발자
+* 개발 Product : Tstore, Tcloud, Tcloud안심백업
+* role : 안드로이드 개발자이지만 안드로이드 아니고 웹과 iOS
+* 부탁 : 잘 부탁드립니다.
 
 **정호윤 (https://www.facebook.com/hoyoon.jun)**
 
