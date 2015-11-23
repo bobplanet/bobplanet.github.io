@@ -19,6 +19,7 @@ _ _ _
 - 동기 : 믿건 안 믿건 경영대 출신, 코딩에 빠져서 생활코딩 스터디그룹을 몇년째 운영중인데 GA 공부한다고 모여서 웹 개발까지 일이 커져버림! 
 - 담당 : 웹 프론트엔드 개발 (+ Google Analytics 담당)
 - 관심 : Google Analytics, javascript 그리고 사과농장 +_+! 
+
 _ _ _
 
 ##### **이진승 [_Facebook](https://www.facebook.com/jjiinn.lee)**
