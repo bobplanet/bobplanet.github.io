@@ -11,12 +11,11 @@ author: 밥플래닛 팀
 - 15년 회사생활 뒤에 본인지향이 마케터였음을 뒤늦게 깨닫고, 코딩하는 마케터가 되기 위해 노력중
 - "간단한 서비스 하나 만들어 운영하면서 실전기반 사용자 행동분석 frame을 잡고, 그걸 T스토어에 적용해보자고 시작한 프로젝트였는데, 어느새 푸쉬알림도 만들고 후니드 인터뷰도 하고 식단데이터도 분석하고 BLE비콘까지 만들게 되었습니다. 뭔가를 배우는 가장 좋은 방법은 직접 해보는 거라죠? 더 많은 분들이 join해서 집단지성을 모을 수 있었으면 좋겠네요"
 
-**박주형 (http://kr.linkedin.com/in/dusskapark/) **
+**박주형 (http://kr.linkedin.com/in/dusskapark/)**
 - 직업 : OneStore 기술운영
 - 동기 : 믿건 안 믿건 경영대 출신, 코딩에 빠져서 생활코딩 스터디그룹을 몇년째 운영중인데 GA 공부한다고 모여서 웹 개발까지 일이 커져버림! 
 - 담당 : 웹 프론트엔드 개발 (+ Google Analytics 담당)
 - 관심 : Google Analytics, javascript 그리고 사과농장 +_+! 
-
 
 **이진승 (https://www.facebook.com/jjiinn.lee)**
 - 직업 : Data Scientist 
