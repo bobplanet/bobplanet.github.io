@@ -12,7 +12,7 @@ categories:
 아래 주소에서 받아보실 수 있으니 한번 써보시고, 부족한 점에 대한 개선의견을 말씀해주신다면 큰 영광으로 여기겠사옵니다.
 
 - T장터 주소: [http://tsto.re/0000694906](http://tsto.re/0000694906)
-- 국을장터 주소: [https://play.google.com/apps/testing/kr.bobplanet.android](https://play.google.com/apps/testing/kr.bobplanet.android)
+- 국을장터 주소: [https://play.google.com/store/apps/details?id=kr.bobplanet.android](https://play.google.com/store/apps/details?id=kr.bobplanet.android)
 
 # 앱을 만든 이유
 10층 객잔사업을 운영하는 훈이두(勳利頭) 회관에 따르면, 날짜마다 차이는 있으나, 조식 80인, 중식 560인, 석식 250인, 합하여 하루에 800인 가량의 사우들이 객잔을 이용하고 있으나, 차림표에 대한 평가의견을 적극적으로 개진하는 사우들은 통상 40두를 넘지 못한다고 합니다. 
