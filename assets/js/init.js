@@ -127,15 +127,23 @@ if (url('?type') == 'webview') {
 
 $('.appDownload').click(function(){
   var banner_click = $(this).parents('div[id]').attr('id');
-  ga('send', 'event', 'BannerBtnClick', 'appDownload', banner_click);
+  var download_market = $(this).text();
+  ga('send', 'event', 'BannerBtnClick', download_market, banner_click);
+
+  fbq('track', 'AddToCart', {
+    content_name: 'App download', 
+    content_category: 'Android > ' + download_market,
+    content_type: banner_click,
+    value: 1.00,
+    currency: 'USD' 
+  });  
+
 });
 
 $('.githubJoin').click(function(){
   var banner_click = $(this).parents('div[id]').attr('id');
   ga('send', 'event', 'BannerBtnClick', 'githubJoin', banner_click);
 });
-
-
 
 
   }); // end of document ready
