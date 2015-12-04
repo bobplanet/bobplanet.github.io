@@ -12,6 +12,6 @@ markdown: kramdown
 
 # Analytics settings
 analytics_param: bobp_userId
-ga_trackid_web: UA-68096153-3
-ga_trackid_rollup: UA-68096153-4
+ga_trackid_web: UA-71027941-2
+ga_trackid_rollup: UA-71027941-3
 mixpanel_trackid: 36cc8303f20d992326aa63283098079c
