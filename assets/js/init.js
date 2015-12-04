@@ -3,6 +3,10 @@
   $(function(){
 
 	$('.parallax').parallax();
+  $('.scrollspy').scrollSpy();
+  $('.slider').slider();
+
+
 
 	$('.button-collapse').sideNav({
 	  menuWidth : 240,

@@ -6,6 +6,33 @@
  * Made By MaterializeCSS.com
  */
 
+ @font-face {
+    font-family: 'BM JUA';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../font/BM/BM-JUA.eot');
+    src: url('../font/BM/BM-JUA.eot?#iefix') format('embedded-opentype'),
+        url('../font/BM/BM-JUA.woff') format('woff'),
+        url('../font/BM/BM-JUA.svg#BM-JUA') format('svg'),
+        url('../font/BM/BM-JUA.ttf') format('truetype');
+ }
+ @font-face {
+    font-family: 'BM HANNA';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../font/BM/BM-HANNA.eot');
+    src: url('../font/BM/BM-HANNA.eot?#iefix') format('embedded-opentype'),
+            url('../font/BM/BM-HANNA.woff') format('woff'),
+            url('../font/BM/BM-HANNA.svg#BM-HANNA') format('svg'),
+            url('../font/BM/BM-HANNA.ttf') format('truetype');
+ }
+
+.baemin_style {
+    font-family:'BM HANNA','배달의민족 주아',sans-serif;
+
+}
+
+
 nav ul a,
 nav .brand-logo {
 	color: #fff;
