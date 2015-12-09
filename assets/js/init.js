@@ -138,8 +138,8 @@ $('.appDownload').click(function(){
     content_name: 'App download', 
     content_category: 'Android > ' + download_market,
     content_type: banner_click,
-    value: 1.00,
-    currency: 'USD' 
+    // value: 1.00,
+    // currency: 'USD' 
   });  
 
 });
