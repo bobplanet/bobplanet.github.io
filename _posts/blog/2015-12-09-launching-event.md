@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "밥플래닛 런칭 이벤트!"
-image: https://cloud.githubusercontent.com/assets/4177529/11584288/16549ffa-9aa6-11e5-92cc-e42ad4f01f3a.jpg
+image: PhotoFunia-1449206498.png
 video: false
 author: 밥플래닛 팀
 ---
