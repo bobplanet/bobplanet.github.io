@@ -33,6 +33,8 @@
     if( url('filename') == "index_type_b" ){
 
       console.log('b test')
+      $('.hide').removeClass();
+
       $("#content-placeholder > h5").text(resp.date);
       
 

@@ -1,0 +1,52 @@
+---
+layout: webview
+---
+
+<div class="container">
+
+  <div id="content-placeholder" class="section row">
+    <!-- 서버에서 불러온 메뉴를 화면에 표시할 템플릿 -->
+
+    <script id="menu-template" type="text/x-handlebars-template">
+    {% raw %}
+
+    <div class="col s12 m4 l4">
+      <div class="section center-align">
+        <a data-id='{{previousDate}}' class="date previousDate btn-floating btn-large waves-effect waves-light deep-orange lighten-2"><i class="material-icons">keyboard_arrow_up</i></a>
+      </div>
+          <hr class="section-heading-spacer">
+          <div class="clearfix"></div>
+          <h4 class="section-heading deep-orange-text text-lighten-2"><i class="material-icons">today</i>오늘의 식단 <br /><span class="today">{{date}}</span></h4>
+      <div class="section center-align">
+        <a data-id='{{nextDate}}' class="date nextDate btn-floating btn-large waves-effect waves-light deep-orange lighten-2"><i class="material-icons">keyboard_arrow_down</i></a>
+      </div>
+    </div>
+    <div class="col s12 m8 l8" data-id="{{date}}">
+    {{#each menu}}
+      <div class="col s12 m6 l6 grid-item" id="{{id}}">
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="{{item.thumbnail}}" /><span class="badge teal white-text">{{when}}{{type}}</span>
+            </div>
+            <div class="card-content row valign-wrapper">
+                <div class="col s12">
+                  <span class="card-title activator grey-text text-darken-4 truncate"><strong class="activator menu_name">{{item.name}}</strong> </span>
+                  <p class="truncate activator">{{#each submenu}}{{item.name}}, {{/each}}</p>
+                </div>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4 "><strong class="menu_name">{{item.name}}</strong><i class="material-icons right">close</i></span>
+                  
+                  <p>{{#each submenu}}{{item.name}}, {{/each}}</p>
+                  
+            </div>
+        </div>
+      </div>
+    {{/each}}
+    </div>
+
+    {% endraw %}
+
+    </script>
+  </div> <!-- end content-placeholder --> 
+</div> <!-- end container -->
