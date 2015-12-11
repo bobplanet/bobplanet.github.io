@@ -136,7 +136,7 @@ $('.appDownload').click(function(){
   var download_market = $(this).text();
   ga('send', 'event', 'BannerBtnClick', download_market, banner_click);
 
-  fbq('track', 'ViewContent', {
+  fbq('track', 'AddToCart', {
     content_name: 'App download', 
     content_category: 'Android > ' + download_market,
     content_ids: banner_click,
