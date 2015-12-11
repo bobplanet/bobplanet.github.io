@@ -73,9 +73,9 @@ layout: default
       <div class="col s12 m6 l6 grid-item" id="{{id}}">
         <div class="card small">
             <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="{{item.thumbnail}}" /><span class="badge teal white-text">{{when}}{{type}}</span>
+                <img class="activator" src="{{item.thumbnail}}" />
             </div>
-            <div class="card-content row valign-wrapper">
+            <div class="card-content row valign-wrapper"><span class="badge teal white-text">{{when}}{{type}}</span>
                 <div class="col s12">
                   <span class="card-title activator grey-text text-darken-4 truncate"><strong class="activator menu_name">{{item.name}}</strong> </span>
                   <p class="truncate activator">{{#each submenu}}{{item.name}}, {{/each}}</p>
