@@ -136,10 +136,11 @@ $('.appDownload').click(function(){
   var download_market = $(this).text();
   ga('send', 'event', 'BannerBtnClick', download_market, banner_click);
 
-  fbq('track', 'AddToCart', {
+  fbq('track', 'ViewContent', {
     content_name: 'App download', 
     content_category: 'Android > ' + download_market,
-    content_type: banner_click,
+    content_ids: banner_click,
+    content_type: 'product'
     // value: 1.00,
     // currency: 'USD' 
   });  
