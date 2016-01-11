@@ -35,10 +35,11 @@ layout: webview
                 </div>
             </div>
             <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4 "><strong class="menu_name">{{item.name}}</strong><i class="material-icons right">close</i></span>
-                  
-                  <p>{{#each submenu}}{{item.name}}, {{/each}}</p>
-                  
+              <span class="card-title grey-text text-darken-4 "><strong class="menu_name">{{item.name}}</strong><i class="material-icons right">close</i></span>
+              <p class="submenu">{{#each submenu}}{{item.name}}, {{/each}}</p>
+              <div class="card-action truncate">
+                <a class="kakao-link-btn" href="javascript:menu( {{id}}, sharekakao );">카톡 공유하기<i class="material-icons right brown-text">chat_bubble</i></a>
+              </div>                  
             </div>
         </div>
       </div>
