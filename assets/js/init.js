@@ -5,7 +5,7 @@
 	$('.parallax').parallax();
   $('.scrollspy').scrollSpy();
   $('.slider').slider();
-
+  Kakao.init('b498b2351acad8353f45dc3064cd191d');
 
 
 	$('.button-collapse').sideNav({
@@ -16,6 +16,17 @@
 	$('.collapsible').collapsible({
 	accordion : true // A setting that changes the collapsible behavior to expandable instead of the default accordion style
 	});
+
+
+  menu = function ( id, successFn ) {
+    var req = { 'id': id };
+    console.log(req, $.type(req) );
+      gapi.client.bobplanetApi.menu(req).execute(function(resp) {
+
+        return successFn(resp);
+
+      });
+  };
 
 
 	menuOfDate = function ( date, successFn ) {
@@ -134,6 +145,7 @@ if (url('?type') == 'webview') {
 $('.appDownload').click(function(){
   var banner_click = $(this).parents('div[id]').attr('id');
   var download_market = $(this).text();
+
   ga('send', 'event', 'BannerBtnClick', download_market, banner_click);
 
   fbq('track', 'AddToCart', {
@@ -147,10 +159,37 @@ $('.appDownload').click(function(){
 
 });
 
+sharekakao = function(resp) {
+  console.log(resp);
+
+  var description = "";      
+  $.each(resp.submenu, function(i, v){
+    description += v.item.name + ", ";      
+  });
+
+  // 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+  Kakao.Link.createTalkLinkButton({
+    container: '.kakao-link-btn',
+    label: resp.date + '오늘의 ' + resp.when + '메뉴를 알려드립니다. 메인: ' + resp.item.name + ', 서브: ' + description,
+    image: {
+      src: resp.item.image,
+      width: '300',
+      height: '200'
+    },
+    webButton: {
+      text: '밥플래닛',
+      url: 'https://bobplanet.kr/#' + resp.id // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+    },
+    fail: Materialize.toast('카카오톡 링크는 모바일 기기에서만 전송 가능합니다.', 4000, 'rounded')
+  });
+
+};
+
 $('.githubJoin').click(function(){
   var banner_click = $(this).parents('div[id]').attr('id');
   ga('send', 'event', 'BannerBtnClick', 'githubJoin', banner_click);
 });
+
 
 
   }); // end of document ready
