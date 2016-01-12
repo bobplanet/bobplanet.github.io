@@ -169,9 +169,7 @@ sharekakao = function(resp) {
     description += v.item.name + ", ";      
   });
 
-  // 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
-  Kakao.Link.createTalkLinkButton({
-    container: '.kakao-link-btn',
+  Kakao.Link.sendTalkLink({
     label: '[' + resp.date + ']' + '오늘의 ' + resp.when + '메뉴를 알려드립니다. "' + resp.item.name + '", ' + description,
     image: {
       src: resp.item.image,
