@@ -178,7 +178,7 @@ sharekakao = function(resp) {
     },
     webButton: {
       text: '밥플래닛',
-      url: 'https://bobplanet.kr/#' + resp.id // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+      url: 'https://bobplanet.kr/menu.html' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
     },
     fail: Materialize.toast('카카오톡 링크는 모바일 기기에서만 전송 가능합니다.', 4000, 'rounded')
   });
