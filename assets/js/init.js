@@ -6,6 +6,9 @@
   $('.scrollspy').scrollSpy();
   $('.slider').slider();
 
+  // 사용할 앱의 KAKAO JavaScript 키를 설정해 주세요.
+  Kakao.init('b498b2351acad8353f45dc3064cd191d');
+
 
 	$('.button-collapse').sideNav({
 	  menuWidth : 240,
@@ -161,8 +164,6 @@ $('.appDownload').click(function(){
 sharekakao = function(resp) {
   console.log(resp);
 
-  Kakao.init('b498b2351acad8353f45dc3064cd191d');
-
   var description = "";      
   $.each(resp.submenu, function(i, v){
     description += v.item.name + ", ";      
@@ -170,7 +171,6 @@ sharekakao = function(resp) {
 
   // 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
   Kakao.Link.createTalkLinkButton({
-
     container: '.kakao-link-btn',
     label: '[' + resp.date + ']' + '오늘의 ' + resp.when + '메뉴를 알려드립니다. "' + resp.item.name + '", ' + description,
     image: {
