@@ -183,6 +183,8 @@ sharekakao = function(resp) {
     fail: Materialize.toast('카카오톡 링크는 모바일 기기에서만 전송 가능합니다.', 4000, 'rounded')
   });
 
+  Kakao.Link.cleanup()
+
 };
 
 $('.githubJoin').click(function(){
