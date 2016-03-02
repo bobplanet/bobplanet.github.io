@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "불쌍한 유기동물, 밥플래닛을 입양해주세요ㅜ"
-image: http://pds.joins.com/news/component/newsis/201201/07/NISI20120107_0005686670_web.jpg
+image: 2016-03-02-NISI20120107.jpg
 video: false
 author: 밥플래닛 팀
 ---
